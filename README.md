@@ -15,7 +15,7 @@ Core developers need sharp tools and use them often. They want quick development
 
 Contributors need an extremely smooth getting started experience and ease in adding their contributions.
 
-Almost every flavor of Unix/Linux has its unique way of building and maintaining software packages for that system. System maintainers and packages want the least friction possible when packaging for their system. Usually, this means as standard as possible build systems and parameterizing things so they can be customized to the system's approach without maintaining brittle patchsets.
+Almost every flavor of Unix/Linux has its unique way of building and maintaining software packages for that system. System maintainers and packagers want the least friction possible when packaging for their system. Usually, this means as standard as possible build systems and parameterizing things so they can be customized to the system's approach without maintaining brittle patchsets.
 
 End users want to install a package on their favorite system and get value from using a piece of software with as little effort as possible.
 
@@ -30,6 +30,29 @@ The approach used here tries to strike a balance as follows:
 * Keep boundaries as tight as possible: Don't vendor things that are separate components. Don't add significant build dependencies, like Ruby.
 * Keep build steps explicit and "accessible": Build steps are combined into build scripts invoked as make targets. They can be decomposed and recomposed in packaging systems without burdening the package managers with writing extra custom code. The more granular and standard, the more likely a system package manager can be easily configured for your "recipe".
 * Make it easy to clone and go, there should be no step 3. For example, clone the repo, type `make` or maybe `make help` and then `make`.
+
+## Getting Started
+
+To build everything, type `make`.
+
+```
+$ make help
+Usage:
+  make <target>
+
+Dependencies
+  setup            Clone all components
+
+Devolpment
+  build            Build all components
+
+Testing
+  test             Run the tests
+
+Maintenance
+  clean            Remove all build artifacts
+  help             Display this help
+```
 
 ## License
 
